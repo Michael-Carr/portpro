@@ -1,0 +1,35 @@
+body{
+    background-color: lightblue;
+}
+.navbar {
+    background-color: #008080;
+}
+.navbar, a{
+    font-weight: bold;
+}
+
+
+.view img{
+    margin-top: 50px;
+    max-width: 100%;
+}
+.container{
+
+    display:flex;
+    background-color: lightblue;
+}
+.jumbotron p{
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    font-family:sans-serif;
+}
+.jumbotron{
+    background-color: lightblue;
+}
+.container, form, p{
+    font-weight: bold;
+    justify-content: center;
+    justify-content: space-between;
+}
