@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,9 +8,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- my css -->
     <link rel="stylesheet" href="style.css">
-    <title>Hello, world!</title>
+    <title>Red River!</title>
+    <script>
+
+
+        $(document).ready(function () {
+            var apikey = "9fbe047f79c9648afaf1966086b1073e"
+            var city = "Red River"
+
+            var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`
+            $.get(url, function (res) {
+
+                console.log(res)
+                var hstring = `<h2>Current Weather in Red River, NM is. ${res.main.temp}°F </h2>`
+                $(`.wbtn`).click(function () {
+                    $(`.wbtn`).html(hstring)
+                })
+                //SO I KNOW THE WEATHER IS WRONG WHEN IT POPS UP....IDK WHY :(
+            }, `json`);
+            return false;
+
+        });
+
+    </script>
+
 </head>
 
 <body>
@@ -39,6 +64,10 @@
         <p>Red River, New Mexico</p>
         <p>Come give us a visit!</p>
     </div>
+
+    <div class="wbtn">
+        <button type="button" class="btn btn-dark">Weather Check</button>
+    </div>
     <div class="container form">
         <P>Enter your first name and email! We will send you a broucher!</P>
         <form>
@@ -53,7 +82,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
-            
+
         </form>
     </div>
 
@@ -65,9 +94,7 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
